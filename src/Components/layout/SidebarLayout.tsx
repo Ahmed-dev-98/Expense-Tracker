@@ -10,7 +10,11 @@ const SidebarLayout = () => {
   const location = useLocation();
   const navigate = useNavigate();
   useEffect(() => {
-    if (location.pathname === "/") setActiveIndex("stats");
+    if (location.pathname === "/") {
+      setActiveIndex("stats");
+    } else {
+      setActiveIndex(location.pathname.split("/")[1]);
+    }
   }, []);
 
   const dashboardItems = [
@@ -21,9 +25,9 @@ const SidebarLayout = () => {
     },
     { name: "stats", icon: <IoStatsChartSharp size={"2rem"} />, route: "/" },
     {
-      name: "users",
+      name: "employees",
       icon: <FaUser size={"2rem"} />,
-      route: "/users",
+      route: "/employees",
     },
 
     { name: "tasks", icon: <FaTasks size={"2rem"} />, route: "/tasks" },

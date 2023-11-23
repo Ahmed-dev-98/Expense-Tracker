@@ -33,7 +33,7 @@ function App() {
           element: <Tasks />,
         },
         {
-          path: "/users",
+          path: "/employees",
           element: <Users />,
         },
         {
