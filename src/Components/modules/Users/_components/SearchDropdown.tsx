@@ -1,6 +1,6 @@
 import React, { SetStateAction, useState } from "react";
 import { TEmployeeData } from "./TableRowData";
-import { userDataArray } from "./Users";
+import { userDataArray } from "../Users";
 
 const SearchDropdown = ({
   setData,

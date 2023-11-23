@@ -1,9 +1,10 @@
 // import axios from "axios";
 
 import { useEffect, useState } from "react";
-import SearchDropdown from "./SearchDropdown";
-import TableHead from "./TableHead";
-import TableRowData, { TEmployeeData } from "./TableRowData";
+import SearchDropdown from "./_components/SearchDropdown";
+import TableHead from "./_components/TableHead";
+import TableRowData, { TEmployeeData } from "./_components/TableRowData";
+import EmployeeModel from "./_components/EmployeeModel";
 
 // eslint-disable-next-line react-refresh/only-export-components
 export const userDataArray: TEmployeeData[] = [
@@ -73,28 +74,18 @@ export const userDataArray: TEmployeeData[] = [
       "https://images.unsplash.com/photo-1522609925277-66fea332c575?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2.2&h=160&w=160&q=80",
   },
 ];
-// import { useEffect } from "react";
 const Users = () => {
-  // const getAllUsers = async () => {
-  //   await axios
-  //     .get("https://todo-task-iti.onrender.com/api/v1/user")
-  //     .then(({ data }) => {
-  //       console.log(data);
-  //     })
-  //     .catch((e) => {
-  //       console.log(e);
-  //     });
-  // };
   const [data, setData] = useState<TEmployeeData[]>([]);
+  const [viewEmployeeModel, setViewEmployeeModel] = useState("");
 
   useEffect(() => {
     setData(userDataArray);
-  }, []);
+  }, [viewEmployeeModel]);
 
   return (
-    <section className="flex flex-col gap-5 justify-center w-full items-center ">
+    <section className="flex flex-col gap-5 justify-center w-full items-center relative ">
       <div className="h-[5rem]  w-full flex items-start justify-start gap-5">
-        <SearchDropdown setData={setData}  />
+        <SearchDropdown setData={setData} />
       </div>
       <div className="container mx-auto px-4 sm:px-8">
         <div className="py-8 w-[98%] mx-auto no-scrollbar h-[20rem]">
@@ -104,7 +95,10 @@ const Users = () => {
                 <TableHead />
                 <tbody className="py-8 w-[90%] mx-auto overflow-y-scroll no-scrollbar h-[22rem] bg-red-400">
                   {data.map((user) => (
-                    <TableRowData employeeData={user} />
+                    <TableRowData
+                      employeeData={user}
+                      setViewEmployeeModel={setViewEmployeeModel}
+                    />
                   ))}
                 </tbody>
               </table>
@@ -112,6 +106,14 @@ const Users = () => {
           </div>
         </div>
       </div>
+      {viewEmployeeModel ? (
+        <EmployeeModel
+          setViewEmployeeModel={setViewEmployeeModel}
+          viewEmployeeModel={viewEmployeeModel}
+        />
+      ) : (
+        ""
+      )}
     </section>
   );
 };

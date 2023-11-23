@@ -6,7 +6,7 @@ import { BiMessageRoundedError, BiLogOut } from "react-icons/bi";
 const Navbar = () => {
   const [isOpneMenue, setIsOpenMenue] = useState(false);
   return (
-    <div className=" w-full  h-[3 rem] mb-4 z-[10]  flex justify-end items-center border-b shadow-xl border-gray-800   ">
+    <div className=" w-full  h-[3.5rem] mb-4 z-[10]  flex justify-end items-center border-b shadow-xl border-gray-800   ">
       <div className="flex justify-center items-center gap-3 me-12 relative ">
         <img src={profilePic} alt="" className="w-12 h-12 rounded-full" />
         <h2 className="text-white text-1xl font-semibold mb-1">Ahmed Hassan</h2>

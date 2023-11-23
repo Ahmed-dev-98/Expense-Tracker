@@ -1,3 +1,4 @@
+import { SetStateAction } from "react";
 
 export type TEmployeeData = {
   name: string;
@@ -13,8 +14,10 @@ export type TEmployeeData = {
 };
 const TableRowData = ({
   employeeData,
+  setViewEmployeeModel
 }: {
   employeeData: TEmployeeData;
+  setViewEmployeeModel : React.Dispatch<SetStateAction<string>>
 }) => {
 
 
@@ -104,6 +107,8 @@ const TableRowData = ({
       </td>
       <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm text-start">
         <button
+        onClick={()=>{setViewEmployeeModel(employeeData.id) ; console.log(employeeData.id , "rawdata");
+        }}
           type="button"
           className="inline-block text-black hover:text-gray-700"
         >
