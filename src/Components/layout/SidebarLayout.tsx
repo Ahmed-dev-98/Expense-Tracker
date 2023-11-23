@@ -1,5 +1,6 @@
 import { AiFillAppstore, AiOutlineGlobal } from "react-icons/ai";
-import { FaHeart, FaFolder, FaUser } from "react-icons/fa";
+import { FaTasks, FaUser } from "react-icons/fa";
+import { RiAdminLine } from "react-icons/ri";
 import { IoMdNotifications } from "react-icons/io";
 import { IoStatsChartSharp } from "react-icons/io5";
 import { useEffect, useState } from "react";
@@ -13,29 +14,30 @@ const SidebarLayout = () => {
   }, []);
 
   const dashboardItems = [
+    {
+      name: "notifications",
+      icon: <IoMdNotifications size={"2rem"} />,
+      route: "/notifications",
+    },
     { name: "stats", icon: <IoStatsChartSharp size={"2rem"} />, route: "/" },
     {
       name: "users",
       icon: <FaUser size={"2rem"} />,
       route: "/users",
     },
-    {
-      name: "notifications",
-      icon: <IoMdNotifications size={"2rem"} />,
-      route: "/notifications",
-    },
-    { name: "favorites", icon: <FaHeart size={"2rem"} />, route: "/favorites" },
+
+    { name: "tasks", icon: <FaTasks size={"2rem"} />, route: "/tasks" },
     {
       name: "global",
       icon: <AiOutlineGlobal size={"2rem"} />,
       route: "/global",
     },
-    { name: "folder", icon: <FaFolder size={"2rem"} />, route: "/folder" },
+    { name: "admins", icon: <RiAdminLine size={"2rem"} />, route: "/admins" },
   ];
   return (
     <section className="flex h-full  ">
       <div className="sidebar  bg-gradient-to-t from-[#151d41] to-[#28336a] h-full  flex flex-col gap-6  w-[8rem]">
-        <div className="text-white flex justify-center pt-2  bg-gradient-to-tr from-[#4bd8a9] to-[#c7e4a0] h-[8rem] cursor-pointer group transition-all duration-500  items-center">
+        <div className="text-white flex justify-center pt-2  bg-gradient-to-tr from-[#4bd8a9] to-[#c7e4a0] h-[5rem] cursor-pointer group transition-all duration-500  items-center">
           <AiFillAppstore size={"3rem"} className="" />
         </div>
 

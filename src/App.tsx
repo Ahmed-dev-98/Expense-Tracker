@@ -4,7 +4,7 @@ import Login from "./Components/home/Login";
 import Register from "./Components/home/Register";
 import DashboardLayout from "./Components/layout/DashboardLayout";
 import Stats from "./Components/modules/Stats/Stats";
-import Favorites from "./Components/modules/Favorites/Favorites";
+import Tasks from "./Components/modules/Tasks/Tasks";
 import Users from "./Components/modules/Users/Users";
 import Global from "./Components/modules/Global/Global";
 import Notifications from "./Components/modules/Notifications/Notifications";
@@ -29,8 +29,8 @@ function App() {
           element: <Stats />,
         },
         {
-          path: "/favorites",
-          element: <Favorites />,
+          path: "/tasks",
+          element: <Tasks />,
         },
         {
           path: "/users",
@@ -45,7 +45,7 @@ function App() {
           element: <Notifications />,
         },
         {
-          path: "/folder",
+          path: "/admins",
           element: <Folder />,
         },
       ],
