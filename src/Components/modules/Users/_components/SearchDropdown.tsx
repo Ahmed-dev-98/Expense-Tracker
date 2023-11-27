@@ -90,11 +90,13 @@ const SearchDropdown = ({
           </li>
         </ul>
       </div>
-      <input
-        onChange={(e) => searchBy(e)}
-        type="text"
-        className="w-full py-2 rounded-sm outline-none px-2"
-      />
+      {dorpDownText === "Search By" ? null : (
+        <input
+          onChange={(e) => searchBy(e)}
+          type="text"
+          className="w-full py-2 rounded-sm outline-none px-2"
+        />
+      )}
     </div>
   );
 };

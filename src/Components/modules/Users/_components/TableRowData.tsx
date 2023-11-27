@@ -14,14 +14,11 @@ export type TEmployeeData = {
 };
 const TableRowData = ({
   employeeData,
-  setViewEmployeeModel
+  setViewEmployeeModel,
 }: {
   employeeData: TEmployeeData;
-  setViewEmployeeModel : React.Dispatch<SetStateAction<string>>
+  setViewEmployeeModel: React.Dispatch<SetStateAction<string>>;
 }) => {
-
-
-
   return (
     <tr>
       <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
@@ -29,8 +26,8 @@ const TableRowData = ({
           <div className="flex-shrink-0 w-10 h-10 relative ">
             <div
               className={`absolute -top-2 right-0 w-3 h-3 rounded-full ${
-                employeeData.isLoggedIn ? "bg-green-500" : "bg-red-500"
-              } animate-pulse `}
+                employeeData.isLoggedIn ? "bg-green-500 animate-pulse" : "bg-red-500"
+              }  `}
             >
               <span className=" rounded-full  animate-pulse "></span>
             </div>
@@ -45,7 +42,7 @@ const TableRowData = ({
               {employeeData.name}
             </p>
             <p className="text-gray-600 whitespace-no-wrap">
-              {employeeData.id}
+             ID :  {employeeData.id}
             </p>
           </div>
         </div>
@@ -67,7 +64,7 @@ const TableRowData = ({
         </p>
       </td>
       <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-        <span className="relative inline-block px-3 py-1 font-semibold text-black leading-tight">
+        <span className="relative inline-block px-3 py-1 font-medium text-black leading-tight">
           <span
             aria-hidden
             className={`absolute inset-0 ${
@@ -89,7 +86,7 @@ const TableRowData = ({
         </span>
       </td>
       <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-        <span className="relative inline-block px-3 py-1 font-semibold text-black leading-tight">
+        <span className="relative inline-block px-3 py-1 font-medium text-black leading-tight">
           <span
             aria-hidden
             className={`absolute inset-0 ${
@@ -107,8 +104,9 @@ const TableRowData = ({
       </td>
       <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm text-start">
         <button
-        onClick={()=>{setViewEmployeeModel(employeeData.id) ; console.log(employeeData.id , "rawdata");
-        }}
+          onClick={() => {
+            setViewEmployeeModel(employeeData.id);
+          }}
           type="button"
           className="inline-block text-black hover:text-gray-700"
         >

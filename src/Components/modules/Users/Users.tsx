@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import SearchDropdown from "./_components/SearchDropdown";
 import TableHead from "./_components/TableHead";
 import TableRowData, { TEmployeeData } from "./_components/TableRowData";
-import EmployeeModel from "./_components/EmployeeModel";
+import EmployeeModel from "./_components/EmployeeModule/EmployeeModel";
 
 // eslint-disable-next-line react-refresh/only-export-components
 export const userDataArray: TEmployeeData[] = [
@@ -83,7 +83,7 @@ const Users = () => {
   }, [viewEmployeeModel]);
 
   return (
-    <section className="flex flex-col gap-5 justify-center w-full items-center relative ">
+    <section className="flex flex-col gap-5 justify-center w-full items-center relative  ">
       <div className="h-[5rem]  w-full flex items-start justify-start gap-5">
         <SearchDropdown setData={setData} />
       </div>
